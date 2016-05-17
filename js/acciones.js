@@ -17,7 +17,7 @@ function Comienza(){
 	//
 	var opciones={frequency:2000};
 	
-	watchID=navigator.accelerometer.watchAcceleration(Correcto,Error,Opciones);
+	watchID=navigator.accelerometer.watchAcceleration(Correcto,Error,opciones);
 	navigator.geolocation.getCurrentPosition(Localiza,ErrorLocalizacion);
 }
 //Detiene la observacion de la aceleracion
@@ -42,12 +42,12 @@ function Error(){
 	alert('Error!');
 }
 //Exito al localizar
-function Localiza(position){
+function Localiza(posicion){
 	var element=document.getElementById('geolocalizacion');
 	element.innerHTML='Latitud:'+posicion.coords.latitude+'<br/>'+
 	'Longitud:'+posicion.coords.longitude+'<br/>'+
 	'Precision:'+posicion.coords.accuracy+'<br/>'+
-	'Intervalo:'+position.timestamp+'<br/>';
+	'Intervalo:'+posicion.timestamp+'<br/>';
 }
 //Error en la Geolocalizacion
 function ErrorLocalizacion(error){
